@@ -1,0 +1,14 @@
+<mat-toolbar color="primary">
+  <button mat-icon-button (click)="onMenuToggleDispatch()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>Libro Market</span>
+  <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
+    <ul fxLayout="row" fxLayoutGap="15px" class="navegacion-menu">
+      <div title="Registrar"><li *ngIf="!estadoUsuario"><a routerLink="/registrar"> <mat-icon>app_registration</mat-icon></a></li></div>
+      <div title="Login"><li *ngIf="!estadoUsuario"><a routerLink="/login"> <mat-icon>login</mat-icon></a></li></div>
+      <div title="Home"><li *ngIf="estadoUsuario"><a routerLink="/"> <mat-icon>home</mat-icon></a></li></div>
+      <div title="Salir"><li (click)="terminarSesion()" *ngIf="estadoUsuario"><a routerLink="/"> <mat-icon>logout</mat-icon></a></li></div>
+    </ul>
+  </div>
+</mat-toolbar>
